@@ -1,4 +1,4 @@
-from functionality.cipher_implementation import Cipher
+from project_encryption.functionality.cipher_implementation import Cipher
 import pytest
 
 

@@ -1,8 +1,8 @@
 import json
 import sqlite3
 from datetime import datetime
-from functionality.common import data_json_for_writing
-from functionality.database import Database
+from project_encryption.functionality.common import data_json_for_writing
+from project_encryption.functionality.database import Database
 
 
 class Cipher:
