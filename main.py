@@ -1,16 +1,19 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import logging
+from src.database import Database
+from src.facade import Facade
+from src.cipher import Cipher
 
 
-# Press the green button in the gutter to run the script.
+def main():
+    logging.basicConfig(filename='app.log', level=logging.DEBUG, format="%(asctime)s %(levelname)s %(message)s")
+
+    with Database('json_db.sqlite3') as db:
+        db.create_table()
+        db.preview_table('Ciphers')
+
+    cipher = Cipher()
+    Facade(cipher)
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    main()
