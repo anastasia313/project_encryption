@@ -3,13 +3,14 @@ import pytest
 import os
 
 THIS_DIR = os.path.dirname(__file__)
+
+
 @pytest.mark.parametrize(
     'expected_path',
     (os.path.join(THIS_DIR, 'json_files/example.json'),),
 )
-
 def test_encrypt_json(expected_path):
-    expected_result = { "data": [
+    expected_result = {"data": [
             {"cipher": "bcde"},
             {"cipher": "bcde"},
             {"cipher": "bcde"}
@@ -19,7 +20,7 @@ def test_encrypt_json(expected_path):
     result = cipher.encrypt_json(expected_path, True)
     assert result == expected_result
 
-THIS_DIR = os.path.dirname(__file__)
+
 @pytest.mark.parametrize(
     'expected_path',
     (os.path.join(THIS_DIR, 'json_files/empty.json'),),
@@ -30,7 +31,7 @@ def test_encrypt_json_when_file_is_empty(expected_path):
         cipher.encrypt_json(expected_path, True)
 
 
-THIS_DIR = os.path.dirname(__file__)
+
 @pytest.mark.parametrize(
     'expected_path',
     (os.path.join(THIS_DIR, 'json_files/zero.json'),),
@@ -40,7 +41,7 @@ def test_encrypt_json_when_step_is_0(expected_path):
         cipher = Cipher()
         cipher.encrypt_json(expected_path, True)
 
-THIS_DIR = os.path.dirname(__file__)
+
 @pytest.mark.parametrize(
     'expected_path',
     (os.path.join(THIS_DIR, 'json_files/negative.json'),),
@@ -50,7 +51,7 @@ def test_encrypt_when_step_is_negative(expected_path):
         cipher = Cipher()
         cipher.encrypt_json(expected_path,True)
 
-THIS_DIR = os.path.dirname(__file__)
+
 @pytest.mark.parametrize(
     'expected_path',
     (os.path.join(THIS_DIR, 'json_files/out_of_range.json'),),

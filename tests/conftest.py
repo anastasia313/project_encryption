@@ -2,10 +2,12 @@ from project_encryption.src.cipher import Cipher, EnteredZeroStep, EnteredNegati
 import pytest
 
 @pytest.fixture
-def encrypt_test_data():
-    return [
-        ('cat', 3, 'fdw'),
-        ('cat', 5, 'hfy'),
-        ('hello', 3, 'khoor'),
-        ('hello', 5, 'mjqqt'),
-    ]
+def prepare_db(connection):
+    cursor = connection.cursor()
+    cursor.execute(
+        'CREATE TABLE IF NOT EXISTS Ciphers(id INTEGER PRIMARY KEY, date DATE NOT NULL, cipher TEXT NOT NULL)')
+    cursor.execute('DELETE FROM Ciphers')
+    date = "2023-11-20 15:11:22.906568"
+    cipher = "{'cipher':'bcde'}"
+    cursor.execute("INSERT INTO Ciphers(date, cipher) VALUES(?, ?)", (date, cipher))
+    connection.commit()

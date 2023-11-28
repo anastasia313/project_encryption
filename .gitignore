@@ -1,5 +1,4 @@
-json_files/keys.json
-json_files/data_file.json
+json_files
 src/json_db.sqlite3
 src/app.log
 
