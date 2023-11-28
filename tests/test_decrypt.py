@@ -67,7 +67,7 @@ def test_decrypt_first_letters_abcde(txt, step, expected_result):
 def test_decrypt_when_step_equal_0():
     with pytest.raises(EnteredZeroStep):
         cipher = Cipher()
-        cipher.decrypt('cat', 0, False)
+        cipher.encrypt('cat', 0, False)
 
 def test_decrypt_when_step_is_negative():
     with pytest.raises(EnteredNegativeStep):
