@@ -13,7 +13,7 @@ import pytest
 )
 def test_decrypt_lowercase(txt, step, expected_result):
     cipher = Cipher()
-    result = cipher.encrypt(txt, step)
+    result = cipher.encrypt(txt, step, False)
     assert result == expected_result
 
 @pytest.mark.parametrize(
@@ -27,7 +27,7 @@ def test_decrypt_lowercase(txt, step, expected_result):
 )
 def test_decrypt_uppercase(txt, step, expected_result):
     cipher = Cipher()
-    result = cipher.encrypt(txt, step)
+    result = cipher.encrypt(txt, step, False)
     assert result == expected_result
 
 @pytest.mark.parametrize(
@@ -39,7 +39,7 @@ def test_decrypt_uppercase(txt, step, expected_result):
 )
 def test_decrypt_digits(txt, step, expected_result):
     cipher = Cipher()
-    result = cipher.encrypt(txt, step)
+    result = cipher.encrypt(txt, step, False)
     assert result == expected_result
 
 def test_decrypt_limit_digits_for_value_1():
@@ -47,7 +47,7 @@ def test_decrypt_limit_digits_for_value_1():
     step = 3
     expected_result = '8'
     cipher = Cipher()
-    result = cipher.encrypt(txt, step)
+    result = cipher.encrypt(txt, step, False)
     assert result == expected_result
 
 @pytest.mark.parametrize(
@@ -61,20 +61,20 @@ def test_decrypt_limit_digits_for_value_1():
 )
 def test_decrypt_first_letters_abcde(txt, step, expected_result):
     cipher = Cipher()
-    result = cipher.encrypt(txt, step)
+    result = cipher.encrypt(txt, step, False)
     assert result == expected_result
 
 def test_decrypt_when_step_equal_0():
     with pytest.raises(EnteredZeroStep):
         cipher = Cipher()
-        cipher.decrypt('cat', 0)
+        cipher.decrypt('cat', 0, False)
 
 def test_decrypt_when_step_is_negative():
     with pytest.raises(EnteredNegativeStep):
         cipher = Cipher()
-        cipher.encrypt('cat', -3)
+        cipher.encrypt('cat', -3, False)
 
 def test_decrypt_when_step_more_than_alphabet():
     with pytest.raises(EnteredStepMoreThanAlphabet):
         cipher = Cipher()
-        cipher.encrypt('cat', 27)
+        cipher.encrypt('cat', 27, False)
