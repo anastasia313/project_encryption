@@ -30,4 +30,4 @@ With this App, users can effortlessly encrypt and decrypt information from text 
 ## Contact
 Anastasia - nastasia.parfenovich@gmail.com
 
-Project Link: https://github.com/your_username/repo_name
+Project Link: https://github.com/anastasia313/project_encryption
