@@ -1,8 +1,8 @@
 import sqlite3
 from datetime import datetime
 
-from project_encryption.src.cipher import Cipher
-from project_encryption.src.const import JSON_RESULT_FILE_NAME
+from src.cipher import Cipher
+from src.const import JSON_RESULT_FILE_NAME
 import pytest
 
 
