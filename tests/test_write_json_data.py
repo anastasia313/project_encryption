@@ -7,7 +7,7 @@ import pytest
 
 
 def test_write_json_data():
-    db_path = "../tests/json_db.sqlite3"
+    db_path = "json_db.sqlite3"
     with open(JSON_RESULT_FILE_NAME, 'w+'):
         pass
 
