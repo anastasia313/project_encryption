@@ -1,4 +1,4 @@
-from project_encryption.src.cipher import Cipher, EnteredZeroStep, EnteredNegativeStep, EnteredStepMoreThanAlphabet, ProvidedEmptyData
+from src.cipher import Cipher, EnteredZeroStep, EnteredNegativeStep, EnteredStepMoreThanAlphabet, ProvidedEmptyData
 import pytest
 import os
 
